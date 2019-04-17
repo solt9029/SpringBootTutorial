@@ -4,6 +4,14 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'idea'
+
+idea {
+    module {
+        inheritOutputDirs = false
+        file("$buildDir/classes/java/main/")
+    }
+}
 
 group = 'com.solt9029'
 version = '0.0.1-SNAPSHOT'
@@ -16,4 +24,5 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-devtools'
 }
