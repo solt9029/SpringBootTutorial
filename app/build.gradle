@@ -13,6 +13,10 @@ idea {
     }
 }
 
+bootJar {
+    archiveName = 'app.jar'
+}
+
 group = 'com.solt9029'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -25,4 +29,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'mysql:mysql-connector-java'
 }

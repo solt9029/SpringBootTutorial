@@ -1,36 +1,35 @@
 version: '3'
 services:
   nginx:
-   container_name: spring-nginx
-   image: nginx:1.13
-   restart: always
-   ports:
-   - 8081:80
-   - 443:443
-   volumes:
-   - ./nginx/conf.d:/etc/nginx/conf.d
-   depends_on:
-   - app
+    image: nginx:1.13
+    restart: always
+    ports:
+      - 8082:80
+      - 443:443
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
  
   mysql:
-   container_name: spring-mysql
-   image: mysql/mysql-server:5.7
-   environment:
-    MYSQL_DATABASE: test
-    MYSQL_ROOT_PASSWORD: hellokoding
-    MYSQL_ROOT_HOST: '%'
-   ports:
-   - "3306:3306"
-   restart: always
+    build: ./mysql
+    environment:
+      MYSQL_DATABASE: sample
+      MYSQL_ROOT_PASSWORD: password
+    expose:
+      - "3306"
+    ports:
+      - "3307:3306"
+    restart: always
   
   app:
     restart: always
     build: ./app
-    working_dir: /app
     volumes:
       - ./app:/app
     expose:
       - "8080"
-    command: bash -c "./gradlew build --continuous & ./gradlew bootRun"
+    ports:
+      - "8081:8080"
     depends_on:
       - mysql
