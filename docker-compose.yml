@@ -16,19 +16,18 @@ services:
     environment:
       MYSQL_DATABASE: sample
       MYSQL_ROOT_PASSWORD: password
-    expose:
-      - "3306"
     ports:
       - "3307:3306"
     restart: always
   
   app:
     restart: always
-    build: ./app
+    build:
+      context: ./app
+      args:
+        SPRING_PROFILES_ACTIVE: "dev-docker"
     volumes:
       - ./app:/app
-    expose:
-      - "8080"
     ports:
       - "8081:8080"
     depends_on:
