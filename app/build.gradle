@@ -5,6 +5,7 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'idea'
+apply plugin: 'checkstyle'
 
 idea {
     module {
