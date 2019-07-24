@@ -1,6 +1,2 @@
-.idea
-target
-*.iml
-out
 .DS_Store
-data
+.idea/*
