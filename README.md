@@ -24,5 +24,5 @@ docker-compose up -d
 ## Check
 ### Insert Data into Book Table
 ```bash
-curl http://localhost:8080/books -X POST -H "Content-Type: application/json" -d '{"name": "book name"}'
+curl http://localhost:8080/posts -X POST -H "Content-Type: application/json" -d '{"title": "post name"}'
 ```
