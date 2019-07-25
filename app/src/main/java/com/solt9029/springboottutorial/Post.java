@@ -3,10 +3,8 @@ package com.solt9029.springboottutorial;
 import com.solt9029.springboottutorial.validations.PostTitle;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,4 +15,7 @@ public class Post {
 
     @PostTitle
     private String title;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Comment> comments;
 }

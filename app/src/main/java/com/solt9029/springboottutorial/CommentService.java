@@ -4,26 +4,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
-public class PostService {
-    private final PostRepository repository;
+public class CommentService {
+    private final CommentRepository repository;
 
     @Autowired
-    public PostService(PostRepository repository) {
+    public CommentService(CommentRepository repository) {
         this.repository = repository;
     }
 
-    public Post save(Post post) {
-        return repository.save(post);
+    public Comment save(Comment comment) {
+        return repository.save(comment);
     }
 
-    public Optional<Post> findById(Long id) {
-        return repository.findById(id);
-    }
-
-    public List<Post> findAll() {
+    public List<Comment> findAll() {
         return repository.findAll();
     }
 
