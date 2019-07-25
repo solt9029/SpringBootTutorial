@@ -3,9 +3,9 @@ package com.solt9029.springboottutorial.validations;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class BookNameValidator implements ConstraintValidator<BookName, String> {
+public class PostTitleValidator implements ConstraintValidator<PostTitle, String> {
     @Override
-    public void initialize(BookName name) {
+    public void initialize(PostTitle name) {
 
     }
 

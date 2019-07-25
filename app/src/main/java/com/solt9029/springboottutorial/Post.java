@@ -1,6 +1,6 @@
 package com.solt9029.springboottutorial;
 
-import com.solt9029.springboottutorial.validations.BookName;
+import com.solt9029.springboottutorial.validations.PostTitle;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -10,11 +10,11 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class Book {
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @BookName
-    private String name;
+    @PostTitle
+    private String title;
 }

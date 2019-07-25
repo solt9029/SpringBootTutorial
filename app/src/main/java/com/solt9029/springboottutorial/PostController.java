@@ -7,22 +7,22 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/books")
-public class BookController {
-    private final BookService service;
+@RequestMapping("/posts")
+public class PostController {
+    private final PostService service;
 
     @Autowired
-    public BookController(BookService service) {
+    public PostController(PostService service) {
         this.service = service;
     }
 
     @PostMapping("")
-    Book save(@Valid @RequestBody Book book) {
-        return service.save(book);
+    Post save(@Valid @RequestBody Post post) {
+        return service.save(post);
     }
 
     @GetMapping("")
-    List<Book> findAll() {
+    List<Post> findAll() {
         return service.findAll();
     }
 

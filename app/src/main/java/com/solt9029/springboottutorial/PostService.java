@@ -6,19 +6,19 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BookService {
-    private final BookRepository repository;
+public class PostService {
+    private final PostRepository repository;
 
     @Autowired
-    public BookService(BookRepository repository) {
+    public PostService(PostRepository repository) {
         this.repository = repository;
     }
 
-    public Book save(Book book) {
-        return repository.save(book);
+    public Post save(Post post) {
+        return repository.save(post);
     }
 
-    public List<Book> findAll() {
+    public List<Post> findAll() {
         return repository.findAll();
     }
 

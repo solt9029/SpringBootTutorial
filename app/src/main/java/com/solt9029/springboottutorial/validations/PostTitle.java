@@ -6,11 +6,11 @@ import javax.validation.ReportAsSingleViolation;
 import java.lang.annotation.*;
 
 @Documented
-@Constraint(validatedBy = BookNameValidator.class)
+@Constraint(validatedBy = PostTitleValidator.class)
 @Target( {ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @ReportAsSingleViolation
-public @interface BookName {
+public @interface PostTitle {
     String message() default "not empty";
 
     Class<?>[] groups() default {};
