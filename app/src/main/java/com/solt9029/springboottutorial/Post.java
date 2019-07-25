@@ -1,5 +1,6 @@
 package com.solt9029.springboottutorial;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.solt9029.springboottutorial.validations.PostTitle;
 import lombok.Data;
 
@@ -16,6 +17,7 @@ public class Post {
     @PostTitle
     private String title;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "post")
+    @JsonIgnoreProperties("post")
     private List<Comment> comments;
 }

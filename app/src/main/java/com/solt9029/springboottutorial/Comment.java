@@ -1,5 +1,6 @@
 package com.solt9029.springboottutorial;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,6 +15,6 @@ public class Comment {
     private String content;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JsonIgnoreProperties("comments")
     private Post post;
 }
