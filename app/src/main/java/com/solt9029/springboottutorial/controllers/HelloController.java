@@ -1,4 +1,4 @@
-package com.solt9029.springboottutorial;
+package com.solt9029.springboottutorial.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

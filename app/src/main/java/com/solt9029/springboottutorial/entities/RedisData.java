@@ -1,4 +1,4 @@
-package com.solt9029.springboottutorial;
+package com.solt9029.springboottutorial.entities;
 
 import lombok.Data;
 

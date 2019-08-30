@@ -1,4 +1,4 @@
-package com.solt9029.springboottutorial;
+package com.solt9029.springboottutorial.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

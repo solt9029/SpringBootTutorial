@@ -1,5 +1,9 @@
-package com.solt9029.springboottutorial;
+package com.solt9029.springboottutorial.controllers;
 
+import com.solt9029.springboottutorial.entities.Comment;
+import com.solt9029.springboottutorial.exceptions.ResourceNotFoundException;
+import com.solt9029.springboottutorial.services.CommentService;
+import com.solt9029.springboottutorial.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.solt9029.springboottutorial;
+package com.solt9029.springboottutorial.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.solt9029.springboottutorial.validations.PostTitle;

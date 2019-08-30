@@ -1,5 +1,7 @@
-package com.solt9029.springboottutorial;
+package com.solt9029.springboottutorial.services;
 
+import com.solt9029.springboottutorial.entities.Post;
+import com.solt9029.springboottutorial.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
