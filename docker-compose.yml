@@ -19,6 +19,11 @@ services:
     ports:
       - 3307:3306
     restart: always
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
   
   app:
     restart: always
@@ -31,6 +36,9 @@ services:
       DB_DATABASE: sample
       DB_USERNAME: root
       DB_PASSWORD: password
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DATABASE: 0
     volumes:
       - ./app:/app
     ports:

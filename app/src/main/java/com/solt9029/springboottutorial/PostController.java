@@ -16,18 +16,18 @@ public class PostController {
         this.service = service;
     }
 
-    @PostMapping("")
-    Post save(@Valid @RequestBody Post post) {
-        return service.save(post);
-    }
-
     @GetMapping("")
-    List<Post> findAll() {
+    List<Post> index() {
         return service.findAll();
     }
 
+    @PostMapping("")
+    Post create(@Valid @RequestBody Post post) {
+        return service.save(post);
+    }
+
     @DeleteMapping("/{id}")
-    void deleteById(@PathVariable Long id) {
+    void destroy(@PathVariable Long id) {
         service.deleteById(id);
     }
 }

@@ -16,21 +16,21 @@ public class CommentController {
         this.commentService = commentService;
     }
 
+    @GetMapping("/comments")
+    List<Comment> index() {
+        return commentService.findAll();
+    }
+
     @PostMapping("/posts/{postId}/comments")
-    Comment save(@PathVariable(value = "postId") Long postId, @RequestBody Comment comment) {
+    Comment create(@PathVariable(value = "postId") Long postId, @RequestBody Comment comment) {
         return postService.findById(postId).map(post -> {
             comment.setPost(post);
             return commentService.save(comment);
         }).orElseThrow(() -> new ResourceNotFoundException("not found"));
     }
 
-    @GetMapping("/comments")
-    List<Comment> findAll() {
-        return commentService.findAll();
-    }
-
     @DeleteMapping("/{id}")
-    void deleteById(@PathVariable Long id) {
+    void destroy(@PathVariable Long id) {
         commentService.deleteById(id);
     }
 }
