@@ -17,18 +17,23 @@ services:
       MYSQL_DATABASE: sample
       MYSQL_ROOT_PASSWORD: password
     ports:
-      - "3307:3306"
+      - 3307:3306
     restart: always
   
   app:
     restart: always
     build:
       context: ./app
-      args:
-        SPRING_PROFILES_ACTIVE: "dev-docker"
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: sample
+      DB_USERNAME: root
+      DB_PASSWORD: password
     volumes:
       - ./app:/app
     ports:
-      - "8081:8080"
+      - 8081:8080
     depends_on:
       - mysql
