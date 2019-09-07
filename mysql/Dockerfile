@@ -1,3 +1,3 @@
 FROM mysql:5.7
 
-COPY ./my.conf /etc/mysql/conf.d/
+ADD ./my.conf /etc/mysql/conf.d/
