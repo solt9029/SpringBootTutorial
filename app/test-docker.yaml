@@ -1,0 +1,6 @@
+schemaVersion: "2.0.0"
+
+fileExistenceTests:
+  - name: app.jar
+    path: /app.jar
+    shouldExist: true
