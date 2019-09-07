@@ -34,6 +34,15 @@ public class PostController {
         return service.save(post);
     }
 
+    @GetMapping("/transactional")
+    public void transactional() {
+        try {
+            service.transactional();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @DeleteMapping("/{id}")
     void destroy(@PathVariable Long id) {
         service.deleteById(id);
