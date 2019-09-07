@@ -21,12 +21,12 @@ public class CommentController {
     }
 
     @GetMapping("/comments")
-    List<Comment> index() {
+    public List<Comment> index() {
         return commentService.findAll();
     }
 
     @PostMapping("/posts/{postId}/comments")
-    Comment create(@PathVariable(value = "postId") Long postId, @RequestBody Comment comment) {
+    public Comment create(@PathVariable(value = "postId") Long postId, @RequestBody Comment comment) {
         return postService.findById(postId).map(post -> {
             comment.setPost(post);
             return commentService.save(comment);
@@ -34,7 +34,7 @@ public class CommentController {
     }
 
     @DeleteMapping("/{id}")
-    void destroy(@PathVariable Long id) {
+    public void destroy(@PathVariable Long id) {
         commentService.deleteById(id);
     }
 }

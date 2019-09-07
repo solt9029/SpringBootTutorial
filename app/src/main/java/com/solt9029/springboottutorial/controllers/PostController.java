@@ -20,17 +20,17 @@ public class PostController {
     }
 
     @GetMapping("")
-    List<Post> index() {
+    public List<Post> index() {
         return service.findAll();
     }
 
     @GetMapping("/{id}")
-    Post show(@PathVariable Long id) {
+    public Post show(@PathVariable Long id) {
         return service.findById(id).orElseThrow(() -> new ResourceNotFoundException("not found"));
     }
 
     @PostMapping("")
-    Post create(@Valid @RequestBody Post post) {
+    public Post create(@Valid @RequestBody Post post) {
         return service.save(post);
     }
 
@@ -44,7 +44,7 @@ public class PostController {
     }
 
     @DeleteMapping("/{id}")
-    void destroy(@PathVariable Long id) {
+    public void destroy(@PathVariable Long id) {
         service.deleteById(id);
     }
 }
