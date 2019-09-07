@@ -1,4 +1,4 @@
-# Tutorial: SpringBoot with Docker
+# Tutorial: SpringBoot
 
 ## Environment
 - IntelliJ (Follow this step: https://casualdevelopers.com/tech-tips/how-to-setup-springboot-with-devtools-on-intellij-ide/ & Install lombok plugin)
