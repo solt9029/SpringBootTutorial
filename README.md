@@ -27,3 +27,4 @@ curl http://localhost:8080/posts/1/comments -X POST -H "Content-Type: applicatio
 - validation
 - db relationship
 - lombok
+- flyway
